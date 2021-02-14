@@ -73,12 +73,13 @@ public class NPCControl : MonoBehaviour
         // let the animator know what's going on
         anim.SetFloat("Speed", nav.velocity.magnitude);
         anim.SetFloat("Turn", turn * 2);
-        if (Vector3.Distance(krabs.position, transform.position) < 3) {
+        anim.SetLayerWeight(1, 1 - Mathf.Clamp(Vector3.Distance(krabs.position, transform.position) - 3.5f, 0, 1));
+        /*if (Vector3.Distance(krabs.position, transform.position) < 3.5f) {
             anim.SetLayerWeight(1, 1);
         }
         else {
             anim.SetLayerWeight(1, 0);
-        }
+        } */
         nav.SetDestination(krabs.position);
         
 

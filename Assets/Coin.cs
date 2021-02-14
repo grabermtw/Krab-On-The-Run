@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
     {
         while (true)
         {
-            transform.Rotate(0, 60 * Time.deltaTime, 0);
+            transform.Rotate(0, 90 * Time.deltaTime, 0);
             yield return null;
         }
     }
